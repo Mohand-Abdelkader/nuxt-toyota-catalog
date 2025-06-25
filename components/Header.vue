@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center mt-[120px]">
+  <div class="flex justify-center mt-10">
     <div
       class="inline-flex flex-col justify-start items-center gap-[11px] mb-10"
     >

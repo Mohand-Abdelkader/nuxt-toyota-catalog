@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 p-6 rounded-lg shadow-sm">
+  <div class="bg-gray-100 p-4 rounded-lg w-80">
     <div class="flex items-center mb-4">
       <h3 class="font-semibold text-gray-900">{{ title }}</h3>
       <div
@@ -11,6 +11,7 @@
     <input
       min="0"
       max="7000"
+      step="100"
       type="range"
       v-model="loadCapacity"
       class="w-full appearance-none h-2 bg-red-100 rounded-lg outline-none accent-red-600"

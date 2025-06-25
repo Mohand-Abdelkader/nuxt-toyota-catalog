@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-gray-100 p-4 rounded-lg w-full max-w-md">
+  <div class="bg-gray-100 p-4 rounded-lg w-80">
     <div class="flex items-center mb-3">
       <h3 class="font-semibold text-gray-900 text-sm">{{ title }}</h3>
       <div
-        class="ml-2 w-4 h-4 bg-red-600 rounded-full flex items-center justify-center text-white text-xs"
+        class="ml-2 w-4 bg-red-600 rounded-full flex items-center justify-center text-white text-xs"
       >
         ?
       </div>

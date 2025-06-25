@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-white shadow-sm">
+  <header class="bg-white p-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <div>
@@ -44,7 +44,7 @@
               <i class="material-icons mr-2">search</i>
             </button>
             <button
-              class="bg-red-600 hover:bg-red-700 text-white font-medium p-2 rounded-2xl"
+              class="bg-red-600 hover:bg-red-700 text-white text-sm font-medium py-4 px-7 rounded-[18px]"
             >
               GET QUOTE
             </button>

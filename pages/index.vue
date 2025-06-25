@@ -2,7 +2,7 @@
   <div class="bg-primary-500">
     <Header />
 
-    <div class="gap-3 mb-10 flex justify-start items-center">
+    <div class="gap-3 mb-10 flex justify-start w-[335px] min-h-min">
       <StepSelector
         title="transport distance"
         :options="distanceOptions"
