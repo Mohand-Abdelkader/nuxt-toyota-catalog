@@ -1,10 +1,8 @@
 <template>
   <div class="bg-primary-500">
-    <div class="flex justify-center mt-[120px]">
-      <h1 class="font-bold text-3xl">Range</h1>
-    </div>
+    <Header />
 
-    <div class="flex gap-3">
+    <div class="gap-3 mb-10 flex justify-start items-center">
       <StepSelector
         title="transport distance"
         :options="distanceOptions"
@@ -17,43 +15,27 @@
       />
       <RangeSelector title="Load Capacity" v-model:value="loadCapacity" />
     </div>
+
+    <!-- this is to reset the filter -->
     <div class="flex gap-3 mt-4 justify-center align-middle">
-      <div
-        class="border border-red-400 flex text-red-500 p-4 gap-5"
-        v-if="loadCapacity != 0"
-      >
-        <p>Load Capacity {{ loadCapacity }}</p>
-        <button
-          @click="resetFilter('loadCapacity')"
-          class="flex cursor-pointer"
-        >
-          <i class="material-icons mr-2">close</i>
-        </button>
-      </div>
-      <div
-        class="border border-red-400 flex text-red-500 p-4 gap-5"
-        v-if="selectedUsage != null"
-      >
-        <p>Usage Intensity {{ selectedUsage }}</p>
-        <button
-          @click="resetFilter('selectedUsage')"
-          class="flex cursor-pointer"
-        >
-          <i class="material-icons mr-2">close</i>
-        </button>
-      </div>
-      <div
-        class="border border-red-400 flex text-red-500 p-4 gap-5"
-        v-if="selectedDistance != null"
-      >
-        <p>Transport Distance {{ selectedDistance }}</p>
-        <button
-          @click="resetFilter('selectedDistance')"
-          class="flex cursor-pointer"
-        >
-          <i class="material-icons mr-2">close</i>
-        </button>
-      </div>
+      <ClearFilter
+        :filter="selectedDistance"
+        :initialValue="null"
+        filterTitle="Transport Distance"
+        @resetFilter="resetFilter('selectedDistance')"
+      />
+      <ClearFilter
+        :filter="loadCapacity"
+        :initialValue="0"
+        filterTitle="Load Capacity"
+        @resetFilter="resetFilter('loadCapacity')"
+      />
+      <ClearFilter
+        :filter="selectedUsage"
+        :initialValue="null"
+        filterTitle="Usage Intensity"
+        @resetFilter="resetFilter('selectedUsage')"
+      />
     </div>
 
     <div

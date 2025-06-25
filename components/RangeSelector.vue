@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-200 p-6 rounded-lg shadow-sm">
+  <div class="bg-gray-100 p-6 rounded-lg shadow-sm">
     <div class="flex items-center mb-4">
       <h3 class="font-semibold text-gray-900">{{ title }}</h3>
       <div

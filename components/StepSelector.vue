@@ -8,23 +8,29 @@
         ?
       </div>
     </div>
-    <div class="flex justify-between items-center">
-      <template v-for="(option, index) in options" :key="option">
+    <div class="flex justify-between items-end">
+      <div
+        v-for="(option, index) in options"
+        :key="option"
+        class="flex flex-col items-center cursor-pointer w-10"
+        @click="selectedIndex = index"
+      >
         <div
-          class="flex flex-col items-center cursor-pointer"
-          @click="selectedIndex = index"
+          :class="[
+            'w-5 h-5 rounded-full border-2 mt-5',
+            selectedIndex === index
+              ? 'bg-red-600 border-red-600'
+              : 'bg-gray-300 border-gray-300',
+          ]"
+        ></div>
+
+        <span
+          class="text-xs mt-1 block h-4"
+          :class="{ 'opacity-0': (index + 1) % 2 === 0 }"
         >
-          <div
-            :class="[
-              'w-5 h-5 rounded-full border-2',
-              selectedIndex === index
-                ? 'bg-red-600 border-red-600'
-                : 'bg-gray-300 border-gray-300',
-            ]"
-          />
-          <span class="text-xs mt-1">{{ option }}</span>
-        </div>
-      </template>
+          {{ option }}
+        </span>
+      </div>
     </div>
   </div>
 </template>
