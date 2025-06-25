@@ -12,7 +12,7 @@
       min="0"
       max="7000"
       type="range"
-      v-model.number="loadCapacity"
+      v-model="loadCapacity"
       class="w-full appearance-none h-2 bg-red-100 rounded-lg outline-none accent-red-600"
     />
     <div class="w-full flex items-center justify-between mt-2 gap-1.5">
@@ -33,9 +33,16 @@
 </template>
 
 <script setup>
-const { title } = defineProps(["title"]);
+const { title, value } = defineProps(["title", "value"]);
 const emit = defineEmits(["update:value"]);
 const loadCapacity = ref(0);
+
+watch(
+  () => value,
+  (newValue) => {
+    loadCapacity.value = newValue;
+  }
+);
 
 watch(loadCapacity, (newValue) => {
   if (newValue < 0) {
