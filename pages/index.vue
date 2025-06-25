@@ -2,7 +2,7 @@
   <div class="bg-primary-500">
     <Header />
 
-    <div class="gap-3 mb-10 flex justify-start w-[335px] min-h-min">
+    <div class="gap-3 mb-10 flex justify-start w-full min-h-min">
       <StepSelector
         title="transport distance"
         :options="distanceOptions"
@@ -38,7 +38,12 @@
       />
     </div>
 
-    <div
+    <!-- <div
+      class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px]"
+    > -->
+    <TransitionGroup
+      name="list"
+      tag="ul"
       class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px]"
     >
       <ProductCard
@@ -46,7 +51,8 @@
         :key="product.id"
         :product="product"
       />
-    </div>
+    </TransitionGroup>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -123,3 +129,15 @@ const resetFilter = (filterName) => {
   }
 };
 </script>
+
+<style scoped>
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+</style>

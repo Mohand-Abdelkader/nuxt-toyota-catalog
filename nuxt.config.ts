@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     config: {
       theme: {
         extend: {
-          colors: { primary: colors.red },
+          colors: { primary: "#ce190a" },
         },
       },
     },
